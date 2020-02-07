@@ -1,0 +1,118 @@
+body {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background: #FFF;
+    font-family: tahoma, verdana, arial, sans-serif;
+    font-size: 80%;
+    text-align: left;
+}
+a:link {color: #C00; text-decoration: none;}
+a:visited {color: #900; text-decoration: none;}
+a:hover {color: #F00; text-decoration: none;}
+a:active {color: #F00; text-decoration: none;}
+
+form {
+    display: inline;
+}
+h2 {
+    font-size: 100%;
+    margin: .1em .2em .5em .2em;
+    cursor: default;
+}
+div#login {
+    position: relative;
+    padding: .8em 1em .5em 1em;
+    margin: 0px auto 0px auto;
+    background-color: #eee;
+    color: #333;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    cursor: default;
+    width: 300px;
+    text-align: left;
+}
+
+div#menu {
+    position: relative;
+    padding: .8em 1em .5em 1em;
+    margin: 0px auto 0px auto;
+    background-color: #eee;
+    color: #333;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    cursor: default;
+    width: 100%;
+    text-align: left;
+}
+
+div#debug {
+    position: relative;
+    padding: .8em 1em .5em 1em;
+    margin: 0px auto 0px auto;
+    background-color: #eee;
+    color: #333;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    cursor: default;
+    width: 100%;
+    text-align: left;
+}
+
+div#articles {
+    position: relative;
+    padding: .8em 1em .5em 1em;
+    margin: 0px auto 0px auto;
+    background-color: #eee;
+    color: #333;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    cursor: default;
+    width: 100%;
+    text-align: left;
+}
+
+div#logo {
+    position: relative;
+    padding: 0px 0px 5px 0px;
+    margin: 0px auto 0px auto;
+    cursor: default;
+    width: 325px;
+    text-align: right;
+}
+div#copy {
+    position: relative;
+    padding: 5px 0px 0px 0px;
+    margin: 0px auto 0px auto;
+    cursor: default;
+    width: 300px;
+    font-size: 80%;
+    text-align: right;
+}
+table.formholder {
+    padding: 0px 0px 0px 0px;
+    border-collapse: separate;
+    font-size: 90%;
+}
+table.formholder tr.line2 td {
+    background: #EEE;
+    padding: 2px 2px 2px 2px;
+    margin: 0px 0px 0px 0px;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    height: 28px;
+}
+
+table.formholder tr.line1 td {
+    background: #FAFAFA;
+    padding: 2px 2px 2px 2px;
+    margin: 0px 0px 0px 0px;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    height: 28px;
+}
