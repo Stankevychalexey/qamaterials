@@ -127,17 +127,17 @@ class PhpAddr {
      // --- Connect to DB, retry 5 times ---
      for ($i = 0; $i < 5; $i++) {
 
-         $db = mysql_connect("$dbserver", "$dbuser", "$dbpass");
-         $errno = mysql_errno();
+         $db = mysqli_connect("$dbserver", "$dbuser", "$dbpass");
+         $errno = mysqli_errno();
          if ($errno == 1040 || $errno == 1226 || $errno == 1203) {
              sleep(1);
          }  else {
              break;
          }
      }
-     mysql_select_db("$dbname", $db);
-     mysql_query('set character set utf8;');
-     mysql_query("SET NAMES `utf8`");
+     mysqli_select_db("$dbname", $db);
+     mysqli_query($db, 'set character set utf8;');
+     mysqli_query($db, "SET NAMES `utf8`");
      
      return $db;
 
@@ -147,8 +147,8 @@ class PhpAddr {
 
   	global $db;
 
-    if(mysql_ping($db)) {
-     mysql_close($db);
+    if(mysqli_ping($db)) {
+     mysqli_close($db);
     }
     return true;
   }
@@ -373,8 +373,8 @@ class BackendPhpaddressbook extends BackendDiff {
 
         $sql = "SELECT id, modified FROM $base_from_where";
 
-        $result = mysql_query($sql);
-        while($rec = mysql_fetch_array($result)) {
+        $result = mysqli_query($db,$sql);
+        while($rec = mysqli_fetch_array($result)) {
             $message = array();
             $message["id"]  = $rec['id'];
             $message["mod"] = $rec["modified"];
@@ -424,8 +424,8 @@ class BackendPhpaddressbook extends BackendDiff {
         $message = new SyncContact();
 
         $sql = "SELECT * FROM $base_from_where AND id = ".intval($id);
-        $result = mysql_query($sql);
-        $addr = mysql_fetch_array($result);
+        $result = mysqli_query($db,$sql);
+        $addr = mysqli_fetch_array($result);
 
         if(isset($addr['email']))
             $message->email1address = $addr['email'];
@@ -613,8 +613,8 @@ class BackendPhpaddressbook extends BackendDiff {
         $sql = "SELECT id, modified FROM $base_from_where AND id = ".intval($id);
 
 //2        $this->_phpaddr->connect();
-        $result = mysql_query($sql);
-        $rec = mysql_fetch_array($result);
+        $result = mysqli_query($db,$sql);
+        $rec = mysqli_fetch_array($result);
 //2        $this->_phpaddr->disconnect();
 
         $message = array();

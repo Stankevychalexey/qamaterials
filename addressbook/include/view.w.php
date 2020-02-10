@@ -107,8 +107,8 @@ function addGroup($r, $members, $title = "") {
 }
 
 function showOneEntry($r, $only_phone = false) {
-
-	 global $db, $table, $table_grp_adr, $table_groups, $print, $is_fix_group, $mail_as_image;
+	
+	 global $db, $table, $table_grp_adr, $table_groups, $print, $is_fix_group, $mail_as_image, $page_ext_qry;
 
 	 $view = "";
    $view .= add("<b>".$r['firstname'].(!empty($r['middlename']) ? " ".$r['middlename'] : "")." ".$r['lastname']."</b>");
@@ -178,10 +178,10 @@ function showOneEntry($r, $only_phone = false) {
 	              AND $table.id = ".$r['id']."
 	              AND $table_grp_adr.group_id  = $table_groups.group_id";
 
-	   $result = mysql_query($sql, $db);
+	   $result = mysqli_query($sql, $db);
 
 	   $first = true;
-	   while($result && $g = mysql_fetch_array($result)) {
+	   while($result && $g = mysqli_fetch_array($result)) {
 	   	 if($first)
 	   	   echo "<br /><i>".ucfmsg('MEMBER_OF').": ";
 	   	 else

@@ -14,10 +14,10 @@
   // Select the columns displayed in "index.php":
   $disp_cols
     = array( "select"
-           //, "photo"
-           , "lastname"
-           , "firstname"
-           //, "last_first"
+           , "photo"
+           // , "lastname"
+           // , "firstname"
+           , "last_first"
            , "address"
            , "all_emails"
            // , "email"
@@ -32,7 +32,7 @@
            );
 
   // Enable quick adding of unstructured addresses
-  $quickadd = false;
+  $quickadd = true;
 
   // Don't display groups
   $nogroups = false;
